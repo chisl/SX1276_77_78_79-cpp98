@@ -35,7 +35,7 @@ public:
 	/*
 	 * REG Fifo:
 	 * LoRaTM base-band FIFO data input/output.
-	 *       FIFO is cleared an not accessible when device is in SLEEP mode 
+	 * FIFO is cleared an not accessible when device is in SLEEP mode
 	 */
 	struct Fifo
 	{
@@ -78,8 +78,8 @@ public:
 		/* Bits LongRangeMode: */
 		/*
 		 * 0 = FSK/OOK Mode
-		 *           1 = LoRaTM Mode
-		 *           This bit can be modified only in Sleep mode. A write operation on other device modes is ignored. 
+		 * 1 = LoRaTM Mode
+		 * This bit can be modified only in Sleep mode. A write operation on other device modes is ignored.
 		 */
 		struct LongRangeMode
 		{
@@ -90,8 +90,8 @@ public:
 		/* Bits AccessSharedReg: */
 		/*
 		 * This bit operates when device is in Lora mode; if set it allows access to FSK registers page located in address space (0x0D:0x3F) while in LoRa mode
-		 *           0 = Access LoRa registers page 0x0D: 0x3F
-		 *           1 = Access FSK registers page (in mode LoRa) 0x0D: 0x3F 
+		 * 0 = Access LoRa registers page 0x0D: 0x3F
+		 * 1 = Access FSK registers page (in mode LoRa) 0x0D: 0x3F
 		 */
 		struct AccessSharedReg
 		{
@@ -157,9 +157,9 @@ public:
 	/*
 	 * REG Fr:
 	 * RF carrier frequency
-	 *       Resolution is 61.035 Hz if F(XOSC) = 32 MHz.
-	 *       Default value is 0x6c8000 = 434 MHz.
-	 *       Register values must be modified only when device is in SLEEP or STAND-BY mode. 
+	 * Resolution is 61.035 Hz if F(XOSC) = 32 MHz.
+	 * Default value is 0x6c8000 = 434 MHz.
+	 * Register values must be modified only when device is in SLEEP or STAND-BY mode.
 	 */
 	struct Fr
 	{
@@ -220,7 +220,7 @@ public:
 		/* Bits OutputPower: */
 		/*
 		 * Pout=Pmax-(15-OutputPower) if PaSelect = 0 (RFO pin)
-		 *           Pout=17-(15-OutputPower)   if PaSelect = 1 (PA_BOOST pin) 
+		 * Pout=17-(15-OutputPower)   if PaSelect = 1 (PA_BOOST pin)
 		 */
 		struct OutputPower
 		{
@@ -330,8 +330,8 @@ public:
 		/* Bits OcpOn: */
 		/*
 		 * Enables overload current protection (OCP) for PA:
-		 *           0 = OCP disabled
-		 *           1 = OCP enabled 
+		 * 0 = OCP disabled
+		 * 1 = OCP enabled
 		 */
 		struct OcpOn
 		{
@@ -342,10 +342,10 @@ public:
 		/* Bits OcpTrim: */
 		/*
 		 * Trimming of OCP current:
-		 *           Imax = 45+5*OcpTrim [mA] if OcpTrim <= 15 (120 mA)
-		 *           Imax = -30+10*OcpTrim [mA] if 15 < OcpTrim <= 27 (130 to 240 mA)
-		 *           Imax = 240mA for higher settings
-		 *           Default Imax = 100mA 
+		 * Imax = 45+5*OcpTrim [mA] if OcpTrim <= 15 (120 mA)
+		 * Imax = -30+10*OcpTrim [mA] if 15 < OcpTrim <= 27 (130 to 240 mA)
+		 * Imax = 240mA for higher settings
+		 * Default Imax = 100mA
 		 */
 		struct OcpTrim
 		{
@@ -383,8 +383,8 @@ public:
 		/* Bits LnaGain: */
 		/*
 		 * LNA gain setting:
-		 *           b000 not used 
-		 * b111 not used 
+		 * b000 not used
+		 * b111 not used
 		 */
 		struct LnaGain
 		{
@@ -401,8 +401,8 @@ public:
 		/* Bits LnaBoostLf: */
 		/*
 		 * Low Frequency (RFI_LF) LNA current adjustment
-		 *           00 = Default LNA current
-		 *           Other = Reserved 
+		 * 00 = Default LNA current
+		 * Other = Reserved
 		 */
 		struct LnaBoostLf
 		{
@@ -420,8 +420,8 @@ public:
 		/* Bits LnaBoostHf: */
 		/*
 		 * High Frequency (RFI_HF) LNA current adjustment
-		 *           0 = Default;     -- Default LNA current
-		 *           1 = Boost_on; -- Boost on, 150% LNA current 
+		 * 0 = Default;     -- Default LNA current
+		 * 1 = Boost_on; -- Boost on, 150% LNA current
 		 */
 		struct LnaBoostHf
 		{
@@ -452,7 +452,7 @@ public:
 	
 	/*
 	 * REG FifoAddrPtr:
-	 * SPI interface address pointer in FIFO data buffer. 
+	 * SPI interface address pointer in FIFO data buffer.
 	 */
 	struct FifoAddrPtr
 	{
@@ -488,7 +488,7 @@ public:
 	
 	/*
 	 * REG FifoTxBaseAddr:
-	 * write base address in FIFO data buffer for TX modulator 
+	 * write base address in FIFO data buffer for TX modulator
 	 */
 	struct FifoTxBaseAddr
 	{
@@ -524,7 +524,7 @@ public:
 	
 	/*
 	 * REG FifoRxBaseAddr:
-	 * read base address in FIFO data buffer for RX demodulator 
+	 * read base address in FIFO data buffer for RX demodulator
 	 */
 	struct FifoRxBaseAddr
 	{
@@ -560,7 +560,7 @@ public:
 	
 	/*
 	 * REG FifoRxCurrentAddr:
-	 * Start address (in data buffer) of last packet received 
+	 * Start address (in data buffer) of last packet received
 	 */
 	struct FifoRxCurrentAddr
 	{
@@ -610,7 +610,7 @@ public:
 		/* Bits RxDoneMask: */
 		/*
 		 * Packet reception complete interrupt mask: setting this bit masks the
-		 *           corresponding IRQ in RegIrqFlags 
+		 * corresponding IRQ in RegIrqFlags
 		 */
 		struct RxDoneMask
 		{
@@ -621,7 +621,7 @@ public:
 		/* Bits PayloadCrcErrorMask: */
 		/*
 		 * Payload CRC error interrupt mask: setting this bit masks the
-		 *           corresponding IRQ in RegIrqFlags 
+		 * corresponding IRQ in RegIrqFlags
 		 */
 		struct PayloadCrcErrorMask
 		{
@@ -632,7 +632,7 @@ public:
 		/* Bits ValidHeaderMask: */
 		/*
 		 * Valid header received in Rx mask: setting this bit masks the
-		 *           corresponding IRQ in RegIrqFlags 
+		 * corresponding IRQ in RegIrqFlags
 		 */
 		struct ValidHeaderMask
 		{
@@ -643,7 +643,7 @@ public:
 		/* Bits TxDoneMask: */
 		/*
 		 * FIFO Payload transmission complete interrupt mask: setting this bit masks
-		 *           the corresponding IRQ in RegIrqFlags 
+		 * the corresponding IRQ in RegIrqFlags
 		 */
 		struct TxDoneMask
 		{
@@ -654,7 +654,7 @@ public:
 		/* Bits CadDoneMask: */
 		/*
 		 * CAD complete interrupt mask: setting this bit masks the corresponding
-		 *           IRQ in RegIrqFlags 
+		 * IRQ in RegIrqFlags
 		 */
 		struct CadDoneMask
 		{
@@ -665,7 +665,7 @@ public:
 		/* Bits FhssChangeChannelMask: */
 		/*
 		 * FHSS change channel interrupt mask: setting this bit masks the
-		 *           corresponding IRQ in RegIrqFlags 
+		 * corresponding IRQ in RegIrqFlags
 		 */
 		struct FhssChangeChannelMask
 		{
@@ -676,7 +676,7 @@ public:
 		/* Bits CadDetectedMask: */
 		/*
 		 * Cad Detected Interrupt Mask: setting this bit masks the corresponding
-		 *           IRQ in RegIrqFlags 
+		 * IRQ in RegIrqFlags
 		 */
 		struct CadDetectedMask
 		{
@@ -798,7 +798,7 @@ public:
 	
 	/*
 	 * REG RxNbBytes:
-	 * Number of payload bytes of latest packet received 
+	 * Number of payload bytes of latest packet received
 	 */
 	struct RxNbBytes
 	{
@@ -834,7 +834,7 @@ public:
 	/*
 	 * REG RxHeaderCntValue:
 	 * Number of valid headers received since last transition into Rx mode.
-	 *       Header and packet counters are reseted in Sleep mode. 
+	 * Header and packet counters are reseted in Sleep mode.
 	 */
 	struct RxHeaderCntValue
 	{
@@ -870,7 +870,7 @@ public:
 	/*
 	 * REG RxPacketCntValue:
 	 * Number of valid packets received since last transition into Rx mode.
-	 *       Header and packet counters are reseted in Sleep mode. 
+	 * Header and packet counters are reseted in Sleep mode.
 	 */
 	struct RxPacketCntValue
 	{
@@ -974,7 +974,7 @@ public:
 	/*
 	 * REG PktSnrValue:
 	 * Estimation of SNR on last packet received.In two's compliment format mutiplied by 4.
-	 *       SNR[dB] = PacketSnr[twos complement-] / 4 
+	 * SNR[dB] = PacketSnr[twos complement-] / 4
 	 */
 	struct PktSnrValue
 	{
@@ -1010,9 +1010,9 @@ public:
 	/*
 	 * REG PktRssiValue:
 	 * RSSI of the latest packet received (dBm):
-	 *       RSSI[dBm] = -157 + Rssi (using HF output port, SNR >= 0) or
-	 *       RSSI[dBm] = -164 + Rssi (using LF output port, SNR >= 0)
-	 *       (see section 5.5.5 for details) 
+	 * RSSI[dBm] = -157 + Rssi (using HF output port, SNR >= 0) or
+	 * RSSI[dBm] = -164 + Rssi (using LF output port, SNR >= 0)
+	 * (see section 5.5.5 for details)
 	 */
 	struct PktRssiValue
 	{
@@ -1048,9 +1048,9 @@ public:
 	/*
 	 * REG RssiValue:
 	 * Current RSSI value (dBm)
-	 *       RSSI[dBm] = -157 + Rssi (using HF output port) or
-	 *       RSSI[dBm] = -164 + Rssi (using LF output port)
-	 *       (see section 5.5.5 for details) 
+	 * RSSI[dBm] = -157 + Rssi (using HF output port) or
+	 * RSSI[dBm] = -164 + Rssi (using LF output port)
+	 * (see section 5.5.5 for details)
 	 */
 	struct RssiValue
 	{
@@ -1092,7 +1092,7 @@ public:
 		/* Bits PllTimeout: */
 		/*
 		 * PLL failed to lock while attempting a TX/RX/CAD operation 1 = PLL did not lock
-		 *           0 = PLL did lock 
+		 * 0 = PLL did lock
 		 */
 		struct PllTimeout
 		{
@@ -1102,8 +1102,8 @@ public:
 		/* Bits CrcOnPayload: */
 		/*
 		 * CRC Information extracted from the received packet header (Explicit header mode only)
-		 *           0 = Header indicates CRC off
-		 *           1 = Header indicates CRC on 
+		 * 0 = Header indicates CRC off
+		 * 1 = Header indicates CRC on
 		 */
 		struct CrcOnPayload
 		{
@@ -1147,8 +1147,8 @@ public:
 		/* Bits BW: */
 		/*
 		 * Signal bandwidth:
-		 *           In the lower band (169MHz), signal bandwidths 8&9 are not supported) 
-		 * other values = reserved 
+		 * In the lower band (169MHz), signal bandwidths 8&9 are not supported)
+		 * other values = reserved
 		 */
 		struct BW
 		{
@@ -1169,9 +1169,9 @@ public:
 		/* Bits CodingRate: */
 		/*
 		 * Error coding rate
-		 *           In implicit header mode should be set on receiver to determine
-		 *           expected coding rate. See 4.1.1.3 
-		 * All other values = reserved 
+		 * In implicit header mode should be set on receiver to determine
+		 * expected coding rate. See 4.1.1.3
+		 * All other values = reserved
 		 */
 		struct CodingRate
 		{
@@ -1186,7 +1186,7 @@ public:
 		/* Bits ImplicitHeaderModeOn: */
 		/*
 		 * 0 = Explicit Header mode
-		 *           1 = Implicit Header mode 
+		 * 1 = Implicit Header mode
 		 */
 		struct ImplicitHeaderModeOn
 		{
@@ -1239,7 +1239,7 @@ public:
 		/* Bits TxContinuousMode: */
 		/*
 		 * 0 = normal mode, a single packet is sent
-		 *           1 = continuous mode, send multiple packets across the FIFO (used for spectral analysis) 
+		 * 1 = continuous mode, send multiple packets across the FIFO (used for spectral analysis)
 		 */
 		struct TxContinuousMode
 		{
@@ -1250,10 +1250,10 @@ public:
 		/* Bits RxPayloadCrcOn: */
 		/*
 		 * Enable CRC generation and check on payload: 0 = CRC disable
-		 *           1 = CRC enable
-		 *           If CRC is needed, RxPayloadCrcOn should be set:
-		 *           - in Implicit header mode: on Tx and Rx side
-		 *           - in Explicit header mode: on the Tx side alone (recovered from the header in Rx side) 
+		 * 1 = CRC enable
+		 * If CRC is needed, RxPayloadCrcOn should be set:
+		 * - in Implicit header mode: on Tx and Rx side
+		 * - in Explicit header mode: on the Tx side alone (recovered from the header in Rx side)
 		 */
 		struct RxPayloadCrcOn
 		{
@@ -1293,8 +1293,8 @@ public:
 	/*
 	 * REG SymbTimeoutLsb:
 	 * RX Time-Out LSB
-	 *       RX operation time-out value expressed as number of symbols:
-	 *       TimeOut = SymbTimeout / Ts 
+	 * RX operation time-out value expressed as number of symbols:
+	 * TimeOut = SymbTimeout / Ts
 	 */
 	struct SymbTimeoutLsb
 	{
@@ -1330,7 +1330,7 @@ public:
 	
 	/*
 	 * REG Preamble:
-	 * Preamble length MSB, = PreambleLength + 4.25 Symbols See 4.1.1 for more details. 
+	 * Preamble length MSB, = PreambleLength + 4.25 Symbols See 4.1.1 for more details.
 	 */
 	struct Preamble
 	{
@@ -1367,7 +1367,7 @@ public:
 	/*
 	 * REG PayloadLength:
 	 * Payload length in bytes. The register needs to be set in implicit header
-	 *       mode for the expected packet length. A 0 value is not permitted 
+	 * mode for the expected packet length. A 0 value is not permitted
 	 */
 	struct PayloadLength
 	{
@@ -1404,7 +1404,7 @@ public:
 	/*
 	 * REG MaxPayloadLength:
 	 * Maximum payload length; if header payload length exceeds value a header
-	 *       CRC error is generated. Allows filtering of packet with a bad size. 
+	 * CRC error is generated. Allows filtering of packet with a bad size.
 	 */
 	struct MaxPayloadLength
 	{
@@ -1441,7 +1441,7 @@ public:
 	/*
 	 * REG HopPeriod:
 	 * Symbol periods between frequency hops. (0 = disabled).
-	 *       1st hop always happen after the 1st header symbol 
+	 * 1st hop always happen after the 1st header symbol
 	 */
 	struct HopPeriod
 	{
@@ -1478,7 +1478,7 @@ public:
 	/*
 	 * REG FifoRxByteAddr:
 	 * Current value of RX databuffer pointer
-	 *       (address of last byte written by Lora receiver) 
+	 * (address of last byte written by Lora receiver)
 	 */
 	struct FifoRxByteAddr
 	{
@@ -1528,7 +1528,7 @@ public:
 		/* Bits LowDataRateOptimize: */
 		/*
 		 * 0 = Disabled
-		 *           1 = Enabled; mandated for when the symbol length exceeds 16ms 
+		 * 1 = Enabled; mandated for when the symbol length exceeds 16ms
 		 */
 		struct LowDataRateOptimize
 		{
@@ -1539,7 +1539,7 @@ public:
 		/* Bits AgcAutoOn: */
 		/*
 		 * 0 = LNA gain set by register LnaGain
-		 *           1 = LNA gain set by the internal AGC loop 
+		 * 1 = LNA gain set by the internal AGC loop
 		 */
 		struct AgcAutoOn
 		{
@@ -1577,7 +1577,7 @@ public:
 	
 	/*
 	 * REG PpmCorrection:
-	 * Data rate offset value, used in conjunction with AFC 
+	 * Data rate offset value, used in conjunction with AFC
 	 */
 	struct PpmCorrection
 	{
@@ -1654,7 +1654,7 @@ public:
 	
 	/*
 	 * REG RssiWideband:
-	 * Wideband RSSI measurement used to locally generate a random number 
+	 * Wideband RSSI measurement used to locally generate a random number
 	 */
 	struct RssiWideband
 	{
@@ -1749,7 +1749,7 @@ public:
 		/* Bits InvertIQ: */
 		/*
 		 * Invert the LoRa I and Q signals 0 = normal mode
-		 *           1 = I and Q signals are inverted 
+		 * 1 = I and Q signals are inverted
 		 */
 		struct InvertIQ_
 		{
@@ -1788,7 +1788,7 @@ public:
 	
 	/*
 	 * REG DetectionThreshold:
-	 * LoRa detection threshold 
+	 * LoRa detection threshold
 	 */
 	struct DetectionThreshold
 	{
@@ -1827,7 +1827,7 @@ public:
 	/*
 	 * REG SyncWord:
 	 * LoRa Sync Word
-	 *       Value 0x34 is reserved for LoRaWAN networks 
+	 * Value 0x34 is reserved for LoRaWAN networks
 	 */
 	struct SyncWord
 	{
