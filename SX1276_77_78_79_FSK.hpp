@@ -34,7 +34,7 @@ public:
 	
 	/*
 	 * REG Fifo:
-	 * FIFO data input/output 
+	 * FIFO data input/output
 	 */
 	struct Fifo
 	{
@@ -77,7 +77,7 @@ public:
 		/* Bits LongRangeMode: */
 		/*
 		 * This bit can be modified only in Sleep mode.
-		 *           A write operation on other device modes is ignored. 
+		 * A write operation on other device modes is ignored.
 		 */
 		struct LongRangeMode
 		{
@@ -89,8 +89,8 @@ public:
 		};
 		/* Bits ModulationType: */
 		/*
-		 * Modulation scheme: 
-		 * 10 = 11 = reserved 
+		 * Modulation scheme:
+		 * 10 = 11 = reserved
 		 */
 		struct ModulationType
 		{
@@ -119,9 +119,9 @@ public:
 		};
 		/* Bits Mode: */
 		/*
-		 * Transceiver modes 
+		 * Transceiver modes
 		 * 110 = reserved
-		 *           111 = reserved 
+		 * 111 = reserved
 		 */
 		struct Mode
 		{
@@ -158,7 +158,7 @@ public:
 	
 	/*
 	 * REG BitrateMsb:
-	 * MSB of Bit Rate (chip rate if Manchester encoding is enabled) 
+	 * MSB of Bit Rate (chip rate if Manchester encoding is enabled)
 	 */
 	struct BitrateMsb
 	{
@@ -195,8 +195,8 @@ public:
 	/*
 	 * REG BitrateLsb:
 	 * LSB of bit rate (chip rate if Manchester encoding is enabled)
-	 *       BitRate =
-	 *       Default value: 4.8 kb/s 
+	 * BitRate =
+	 * Default value: 4.8 kb/s
 	 */
 	struct BitrateLsb
 	{
@@ -232,7 +232,7 @@ public:
 	
 	/*
 	 * REG Fdev:
-	 * LSB of the frequency deviation Fdev = Fstep ? Fdev(15,0) Default value: 5 kHz 
+	 * LSB of the frequency deviation Fdev = Fstep ? Fdev(15,0) Default value: 5 kHz
 	 */
 	struct Fdev
 	{
@@ -277,10 +277,10 @@ public:
 	/*
 	 * REG FrfLsb:
 	 * RF carrier frequency
-	 *       Default value: 434.000 MHz
-	 *       The RF frequency is taken into account internally only when:
-	 *       - entering FSRX/FSTX modes
-	 *       - re-starting the receiver 
+	 * Default value: 434.000 MHz
+	 * The RF frequency is taken into account internally only when:
+	 * - entering FSRX/FSTX modes
+	 * - re-starting the receiver
 	 */
 	struct FrfLsb
 	{
@@ -341,7 +341,7 @@ public:
 		/* Bits OutputPower: */
 		/*
 		 * Pout=Pmax-(15-OutputPower) if PaSelect = 0 (RFO pins)
-		 *           Pout=17-(15-OutputPower)   if PaSelect = 1 (PA_BOOST pin) 
+		 * Pout=17-(15-OutputPower)   if PaSelect = 1 (PA_BOOST pin)
 		 */
 		struct OutputPower
 		{
@@ -386,15 +386,15 @@ public:
 		/* Bits ModulationShaping: */
 		/*
 		 * Data shaping: In FSK:
-		 *           - 00 = no shaping
-		 *           - 01 = Gaussian filter BT = 1.0
-		 *           - 10 = Gaussian filter BT = 0.5
-		 *           - 11 = Gaussian filter BT = 0.3 
-		 *           In OOK:
-		 *           - 00 = no shaping
-		 *           - 01 = filtering with fcutoff = bit_rate
-		 *           - 10 = filtering with fcutoff = 2*bit_rate (for bit_rate < 125 kb/s) 
-		 *           - 11 = reserved 
+		 * - 00 = no shaping
+		 * - 01 = Gaussian filter BT = 1.0
+		 * - 10 = Gaussian filter BT = 0.5
+		 * - 11 = Gaussian filter BT = 0.3
+		 * In OOK:
+		 * - 00 = no shaping
+		 * - 01 = filtering with fcutoff = bit_rate
+		 * - 10 = filtering with fcutoff = 2*bit_rate (for bit_rate < 125 kb/s)
+		 * - 11 = reserved
 		 */
 		struct ModulationShaping
 		{
@@ -479,9 +479,9 @@ public:
 		/* Bits OcpTrim: */
 		/*
 		 * Trimming of OCP current:
-		 *           Imax = 45+5*OcpTrim [mA] if OcpTrim <= 15 (120 mA) /
-		 *           Imax = -30+10*OcpTrim [mA] if 15 < OcpTrim <= 27 (130 to 240 mA)
-		 *           Imax = 240mA for higher settings Default Imax = 100mA 
+		 * Imax = 45+5*OcpTrim [mA] if OcpTrim <= 15 (120 mA) /
+		 * Imax = -30+10*OcpTrim [mA] if 15 < OcpTrim <= 27 (130 to 240 mA)
+		 * Imax = 240mA for higher settings Default Imax = 100mA
 		 */
 		struct OcpTrim
 		{
@@ -518,10 +518,10 @@ public:
 		
 		/* Bits LnaGain: */
 		/*
-		 * LNA gain setting: 000 = reserved 
+		 * LNA gain setting: 000 = reserved
 		 * 'b111 = reserved Note:
-		 *           Reading this address always returns the current LNA gain
-		 *           (which may be different from what had been previously selected if AGC is enabled. 
+		 * Reading this address always returns the current LNA gain
+		 * (which may be different from what had been previously selected if AGC is enabled.
 		 */
 		struct LnaGain
 		{
@@ -538,7 +538,7 @@ public:
 		/* Bits LnaBoostLf: */
 		/*
 		 * Low Frequency (RFI_LF) LNA current adjustment 00 = Default LNA current
-		 *           Other = Reserved 
+		 * Other = Reserved
 		 */
 		struct LnaBoostLf
 		{
@@ -556,7 +556,7 @@ public:
 		/* Bits LnaBoostHf: */
 		/*
 		 * High Frequency (RFI_HF) LNA current adjustment 00 = Default LNA current
-		 *           11 = Boost on, 150% LNA current 
+		 * 11 = Boost on, 150% LNA current
 		 */
 		struct LnaBoostHf
 		{
@@ -594,9 +594,9 @@ public:
 		/* Bits RestartRxOnCollision: */
 		/*
 		 * Turns on the mechanism restarting the receiver automatically if it gets
-		 *           saturated or a packet collision is detected
-		 *           0 = No automatic Restart
-		 *           1 = Automatic restart On 
+		 * saturated or a packet collision is detected
+		 * 0 = No automatic Restart
+		 * 1 = Automatic restart On
 		 */
 		struct RestartRxOnCollision
 		{
@@ -607,7 +607,7 @@ public:
 		/* Bits RestartRxWithoutPllLock: */
 		/*
 		 * Triggers a manual Restart of the Receiver chain when set to 1.
-		 *           Use this bit when there is no frequency change, RestartRxWithPllLock otherwise. 
+		 * Use this bit when there is no frequency change, RestartRxWithPllLock otherwise.
 		 */
 		struct RestartRxWithoutPllLock
 		{
@@ -618,7 +618,7 @@ public:
 		/* Bits RestartRxWithPllLock: */
 		/*
 		 * Triggers a manual Restart of the Receiver chain when set to 1.
-		 *           Use this bit when there is a frequency change, requiring some time for the PLL to re-lock. 
+		 * Use this bit when there is a frequency change, requiring some time for the PLL to re-lock.
 		 */
 		struct RestartRxWithPllLock
 		{
@@ -629,7 +629,7 @@ public:
 		/* Bits AfcAutoOn: */
 		/*
 		 * 0 = No AFC performed at receiver startup
-		 *           1 = AFC is performed at each receiver startup 
+		 * 1 = AFC is performed at each receiver startup
 		 */
 		struct AfcAutoOn
 		{
@@ -683,8 +683,8 @@ public:
 		/* Bits RssiOffset: */
 		/*
 		 * Signed RSSI offset, to compensate for the possible losses/gains in the
-		 *           front-end (LNA, SAW filter...)
-		 *           1dB / LSB, 2's complement format 
+		 * front-end (LNA, SAW filter...)
+		 * 1dB / LSB, 2's complement format
 		 */
 		struct RssiOffset
 		{
@@ -732,7 +732,7 @@ public:
 	/*
 	 * REG RssiCollision:
 	 * Sets the threshold used to consider that an interferer is detected,
-	 *       witnessing a packet collision. 1dB/LSB (only RSSI increase) Default: 10dB 
+	 * witnessing a packet collision. 1dB/LSB (only RSSI increase) Default: 10dB
 	 */
 	struct RssiCollision
 	{
@@ -769,7 +769,7 @@ public:
 	/*
 	 * REG RssiThresh:
 	 * RSSI trigger level for the Rssi interrupt:
-	 *       - RssiThreshold / 2 [dBm] 
+	 * - RssiThreshold / 2 [dBm]
 	 */
 	struct RssiThresh
 	{
@@ -805,7 +805,7 @@ public:
 	
 	/*
 	 * REG RssiValue:
-	 * Absolute value of the RSSI in dBm, 0.5dB steps. RSSI = - RssiValue/2 [dBm] 
+	 * Absolute value of the RSSI in dBm, 0.5dB steps. RSSI = - RssiValue/2 [dBm]
 	 */
 	struct RssiValue
 	{
@@ -859,8 +859,8 @@ public:
 		};
 		/* Bits RxBwMant: */
 		/*
-		 * Channel filter bandwidth control: 
-		 * 11 = reserved 
+		 * Channel filter bandwidth control:
+		 * 11 = reserved
 		 */
 		struct RxBwMant
 		{
@@ -966,7 +966,7 @@ public:
 		/* Bits BitSyncOn: */
 		/*
 		 * Enables the Bit Synchronizer.
-		 *           0 = Bit Sync disabled (not possible in Packet mode) 1 = Bit Sync enabled 
+		 * 0 = Bit Sync disabled (not possible in Packet mode) 1 = Bit Sync enabled
 		 */
 		struct BitSyncOn
 		{
@@ -976,8 +976,8 @@ public:
 		};
 		/* Bits OokThreshType: */
 		/*
-		 * Selects the type of threshold in the OOK data slicer: 
-		 * 11 = reserved 
+		 * Selects the type of threshold in the OOK data slicer:
+		 * 11 = reserved
 		 */
 		struct OokThreshType
 		{
@@ -1028,7 +1028,7 @@ public:
 	/*
 	 * REG OokFix:
 	 * Fixed threshold for the Data Slicer in OOK mode
-	 *       Floor threshold for the Data Slicer in OOK when Peak mode is used 
+	 * Floor threshold for the Data Slicer in OOK when Peak mode is used
 	 */
 	struct OokFix
 	{
@@ -1071,14 +1071,14 @@ public:
 		/* Bits OokPeakThreshDec: */
 		/*
 		 * Period of decrement of the RSSI threshold in the OOK demodulator:
-		 *           000 = once per chip
-		 *           001 = once every 2 chips
-		 *           010 = once every 4 chips
-		 *           011 = once every 8 chips
-		 *           100 = twice in each chip
-		 *           101 = 4 times in each chip
-		 *           110 = 8 times in each chip
-		 *           111 = 16 times in each chip 
+		 * 000 = once per chip
+		 * 001 = once every 2 chips
+		 * 010 = once every 4 chips
+		 * 011 = once every 8 chips
+		 * 100 = twice in each chip
+		 * 101 = 4 times in each chip
+		 * 110 = 8 times in each chip
+		 * 111 = 16 times in each chip
 		 */
 		struct OokPeakThreshDec
 		{
@@ -1097,10 +1097,10 @@ public:
 		/* Bits OokAverageOffset: */
 		/*
 		 * Static offset added to the threshold in average mode in order to reduce glitching activity (OOK only):
-		 *           00 = 0.0 dB
-		 *           01 = 2.0 dB
-		 *           10 = 4.0 dB
-		 *           11 = 6.0 dB 
+		 * 00 = 0.0 dB
+		 * 01 = 2.0 dB
+		 * 10 = 4.0 dB
+		 * 11 = 6.0 dB
 		 */
 		struct OokAverageOffset
 		{
@@ -1111,10 +1111,10 @@ public:
 		/* Bits OokAverageThreshFilt: */
 		/*
 		 * Filter coefficients in average mode of the OOK demodulator:
-		 *           00 = fC ~ chip rate / 32 pi
-		 *           01 = fC ~ chip rate / 8 pi
-		 *           10 = fC ~ chip rate / 4 pi
-		 *           11 = fC ~ chip rate / 2 pi 
+		 * 00 = fC ~ chip rate / 32 pi
+		 * 01 = fC ~ chip rate / 8 pi
+		 * 10 = fC ~ chip rate / 4 pi
+		 * 11 = fC ~ chip rate / 2 pi
 		 */
 		struct OokAverageThreshFilt
 		{
@@ -1186,8 +1186,8 @@ public:
 		/* Bits AfcAutoClearOn: */
 		/*
 		 * Only valid if AfcAutoOn is set
-		 *           0 = AFC register is not cleared at the beginning of the automatic AFC phase
-		 *           1 = AFC register is cleared at the beginning of the automatic AFC phase 
+		 * 0 = AFC register is not cleared at the beginning of the automatic AFC phase
+		 * 1 = AFC register is cleared at the beginning of the automatic AFC phase
 		 */
 		struct AfcAutoClearOn
 		{
@@ -1218,7 +1218,7 @@ public:
 	
 	/*
 	 * REG Afc:
-	 * AfcValue, 2's complement format. Can be used to overwrite the current AFC value 
+	 * AfcValue, 2's complement format. Can be used to overwrite the current AFC value
 	 */
 	struct Afc
 	{
@@ -1255,7 +1255,7 @@ public:
 	/*
 	 * REG Fei:
 	 * Measured frequency offset, 2's complement. Must be read before RegFeiLsb.
-	 *       Frequency error = FeiValue x Fstep 
+	 * Frequency error = FeiValue x Fstep
 	 */
 	struct Fei
 	{
@@ -1297,8 +1297,8 @@ public:
 		/* Bits PreambleDetectorOn: */
 		/*
 		 * Enables Preamble detector when set to 1. The AGC settings supersede this bit during the startup / AGC phase.
-		 *           0 = Turned off
-		 *           1 = Turned on 
+		 * 0 = Turned off
+		 * 1 = Turned on
 		 */
 		struct PreambleDetectorOn
 		{
@@ -1309,10 +1309,10 @@ public:
 		/* Bits PreambleDetectorSize: */
 		/*
 		 * Number of Preamble bytes to detect to trigger an interrupt
-		 *           00 = 1 byte
-		 *           10 = 3 bytes
-		 *           01 = 2 bytes
-		 *           11 = Reserved 
+		 * 00 = 1 byte
+		 * 10 = 3 bytes
+		 * 01 = 2 bytes
+		 * 11 = Reserved
 		 */
 		struct PreambleDetectorSize
 		{
@@ -1352,8 +1352,8 @@ public:
 	/*
 	 * REG RxTimeout1:
 	 * Timeout interrupt is generated TimeoutRxRssi*16*Tbit after switching to Rx mode
-	 *       if Rssi interrupt doesn?t occur (i.e. RssiValue > RssiThreshold)
-	 *       0x00: TimeoutRxRssi is disabled 
+	 * if Rssi interrupt doesn?t occur (i.e. RssiValue > RssiThreshold)
+	 * 0x00: TimeoutRxRssi is disabled
 	 */
 	struct RxTimeout1
 	{
@@ -1390,8 +1390,8 @@ public:
 	/*
 	 * REG RxTimeout2:
 	 * Timeout interrupt is generated TimeoutRxPreamble*16*Tbit after switching to
-	 *       Rx mode if Preamble interrupt doesn't occur
-	 *       0x00: TimeoutRxPreamble is disabled 
+	 * Rx mode if Preamble interrupt doesn't occur
+	 * 0x00: TimeoutRxPreamble is disabled
 	 */
 	struct RxTimeout2
 	{
@@ -1428,7 +1428,7 @@ public:
 	/*
 	 * REG RxTimeout3:
 	 * Timeout interrupt is generated TimeoutSignalSync*16*Tbit after the Rx mode
-	 *       is programmed, if SyncAddress doesn?t occur 0x00: TimeoutSignalSync is disabled 
+	 * is programmed, if SyncAddress doesn?t occur 0x00: TimeoutSignalSync is disabled
 	 */
 	struct RxTimeout3
 	{
@@ -1465,7 +1465,7 @@ public:
 	/*
 	 * REG RxDelay:
 	 * Additional delay before an automatic receiver restart is launched:
-	 *       Delay = InterPacketRxDelay*4*Tbit 
+	 * Delay = InterPacketRxDelay*4*Tbit
 	 */
 	struct RxDelay
 	{
@@ -1514,7 +1514,7 @@ public:
 		/* Bits RcCalStart: */
 		/*
 		 * Triggers the calibration of the RC oscillator when set. Always reads 0.
-		 *           RC calibration must be triggered in Standby mode. 
+		 * RC calibration must be triggered in Standby mode.
 		 */
 		struct RcCalStart
 		{
@@ -1525,14 +1525,14 @@ public:
 		/* Bits ClkOut: */
 		/*
 		 * Selects CLKOUT frequency:
-		 *           000 = FXOSC
-		 *           001 = FXOSC / 2
-		 *           010 = FXOSC / 4
-		 *           011 = FXOSC / 8
-		 *           100 = FXOSC / 16
-		 *           101 = FXOSC / 32
-		 *           110 = RC (automatically enabled)
-		 *           111 = OFF 
+		 * 000 = FXOSC
+		 * 001 = FXOSC / 2
+		 * 010 = FXOSC / 4
+		 * 011 = FXOSC / 8
+		 * 100 = FXOSC / 16
+		 * 101 = FXOSC / 32
+		 * 110 = RC (automatically enabled)
+		 * 111 = OFF
 		 */
 		struct ClkOut
 		{
@@ -1563,7 +1563,7 @@ public:
 	
 	/*
 	 * REG Preamble:
-	 * Size of the preamble to be sent (from TxStartCondition fulfilled). 
+	 * Size of the preamble to be sent (from TxStartCondition fulfilled).
 	 */
 	struct Preamble
 	{
@@ -1606,11 +1606,11 @@ public:
 		/* Bits AutoRestartRxMode: */
 		/*
 		 * Controls the automatic restart of the receiver after the reception of a
-		 *           valid packet (PayloadReady or CrcOk):
-		 *           00 = Off
-		 *           01 = On, without waiting for the PLL to re-lock
-		 *           10 = On, wait for the PLL to lock (frequency changed)
-		 *           11 = reserved 
+		 * valid packet (PayloadReady or CrcOk):
+		 * 00 = Off
+		 * 01 = On, without waiting for the PLL to re-lock
+		 * 10 = On, wait for the PLL to lock (frequency changed)
+		 * 11 = reserved
 		 */
 		struct AutoRestartRxMode
 		{
@@ -1621,8 +1621,8 @@ public:
 		/* Bits PreamblePolarity: */
 		/*
 		 * Sets the polarity of the Preamble
-		 *           0 = 0xAA (default)
-		 *           1 = 0x55 
+		 * 0 = 0xAA (default)
+		 * 1 = 0x55
 		 */
 		struct PreamblePolarity
 		{
@@ -1633,8 +1633,8 @@ public:
 		/* Bits SyncOn: */
 		/*
 		 * Enables the Sync word generation and detection:
-		 *           0 = Off
-		 *           1 = On 
+		 * 0 = Off
+		 * 1 = On
 		 */
 		struct SyncOn
 		{
@@ -1652,7 +1652,7 @@ public:
 		/* Bits SyncSize: */
 		/*
 		 * Size of the Sync word:
-		 *           (SyncSize + 1) bytes, (SyncSize) bytes if ioHomeOn=1 
+		 * (SyncSize + 1) bytes, (SyncSize) bytes if ioHomeOn=1
 		 */
 		struct SyncSize
 		{
@@ -1683,7 +1683,7 @@ public:
 	
 	/*
 	 * REG SyncValue1:
-	 * 1st byte of Sync word. (MSB byte) Used if SyncOn is set. 
+	 * 1st byte of Sync word. (MSB byte) Used if SyncOn is set.
 	 */
 	struct SyncValue1
 	{
@@ -1719,7 +1719,7 @@ public:
 	/*
 	 * REG SyncValue2:
 	 * 2nd byte of Sync word
-	 *       Used if SyncOn is set and (SyncSize +1) >= 2. 
+	 * Used if SyncOn is set and (SyncSize +1) >= 2.
 	 */
 	struct SyncValue2
 	{
@@ -1755,7 +1755,7 @@ public:
 	/*
 	 * REG SyncValue3:
 	 * 3rd byte of Sync word.
-	 *       Used if SyncOn is set and (SyncSize +1) >= 3. 
+	 * Used if SyncOn is set and (SyncSize +1) >= 3.
 	 */
 	struct SyncValue3
 	{
@@ -1791,7 +1791,7 @@ public:
 	/*
 	 * REG SyncValue4:
 	 * 4th byte of Sync word.
-	 *       Used if SyncOn is set and (SyncSize +1) >= 4. 
+	 * Used if SyncOn is set and (SyncSize +1) >= 4.
 	 */
 	struct SyncValue4
 	{
@@ -1827,7 +1827,7 @@ public:
 	/*
 	 * REG SyncValue5:
 	 * 5th byte of Sync word.
-	 *       Used if SyncOn is set and (SyncSize +1) >= 5. 
+	 * Used if SyncOn is set and (SyncSize +1) >= 5.
 	 */
 	struct SyncValue5
 	{
@@ -1863,7 +1863,7 @@ public:
 	/*
 	 * REG SyncValue6:
 	 * 6th byte of Sync word.
-	 *       Used if SyncOn is set and (SyncSize +1) >= 6. 
+	 * Used if SyncOn is set and (SyncSize +1) >= 6.
 	 */
 	struct SyncValue6
 	{
@@ -1899,7 +1899,7 @@ public:
 	/*
 	 * REG SyncValue7:
 	 * 7th byte of Sync word.
-	 *       Used if SyncOn is set and (SyncSize +1) >= 7. 
+	 * Used if SyncOn is set and (SyncSize +1) >= 7.
 	 */
 	struct SyncValue7
 	{
@@ -1935,7 +1935,7 @@ public:
 	/*
 	 * REG SyncValue8:
 	 * 8th byte of Sync word.
-	 *       Used if SyncOn is set and (SyncSize +1) = 8. 
+	 * Used if SyncOn is set and (SyncSize +1) = 8.
 	 */
 	struct SyncValue8
 	{
@@ -1977,8 +1977,8 @@ public:
 		/* Bits PacketFormat: */
 		/*
 		 * Defines the packet format used:
-		 *           0 = Fixed length
-		 *           1 = Variable length 
+		 * 0 = Fixed length
+		 * 1 = Variable length
 		 */
 		struct PacketFormat
 		{
@@ -1989,10 +1989,10 @@ public:
 		/* Bits DcFree: */
 		/*
 		 * Defines DC-free encoding/decoding performed:
-		 *           00 = None (Off)
-		 *           01 = Manchester
-		 *           10 = Whitening
-		 *           11 = reserved 
+		 * 00 = None (Off)
+		 * 01 = Manchester
+		 * 10 = Whitening
+		 * 11 = reserved
 		 */
 		struct DcFree
 		{
@@ -2003,8 +2003,8 @@ public:
 		/* Bits CrcOn: */
 		/*
 		 * Enables CRC calculation/check (Tx/Rx):
-		 *           0 = Off
-		 *           1 = On 
+		 * 0 = Off
+		 * 1 = On
 		 */
 		struct CrcOn
 		{
@@ -2015,8 +2015,8 @@ public:
 		/* Bits CrcAutoClearOff: */
 		/*
 		 * Defines the behavior of the packet handler when CRC check fails:
-		 *           0 = Clear FIFO and restart new packet reception. No PayloadReady interrupt issued.
-		 *           1 = Do not clear FIFO. PayloadReady interrupt issued. 
+		 * 0 = Clear FIFO and restart new packet reception. No PayloadReady interrupt issued.
+		 * 1 = Do not clear FIFO. PayloadReady interrupt issued.
 		 */
 		struct CrcAutoClearOff
 		{
@@ -2027,10 +2027,10 @@ public:
 		/* Bits AddressFiltering: */
 		/*
 		 * Defines address based filtering in Rx:
-		 *           00 = None (Off)
-		 *           01 = Address field must match NodeAddress
-		 *           10 = Address field must match NodeAddress or BroadcastAddress
-		 *           11 = reserved 
+		 * 00 = None (Off)
+		 * 01 = Address field must match NodeAddress
+		 * 10 = Address field must match NodeAddress or BroadcastAddress
+		 * 11 = reserved
 		 */
 		struct AddressFiltering
 		{
@@ -2041,8 +2041,8 @@ public:
 		/* Bits CrcWhiteningType: */
 		/*
 		 * Selects the CRC and whitening algorithms:
-		 *           0 = CCITT CRC implementation with standard whitening
-		 *           1 = IBM CRC implementation with alternate whitening 
+		 * 0 = CCITT CRC implementation with standard whitening
+		 * 1 = IBM CRC implementation with alternate whitening
 		 */
 		struct CrcWhiteningType
 		{
@@ -2059,8 +2059,8 @@ public:
 		/* Bits DataMode: */
 		/*
 		 * Data processing mode:
-		 *           0 = Continuous mode
-		 *           1 = Packet mode 
+		 * 0 = Continuous mode
+		 * 1 = Packet mode
 		 */
 		struct DataMode
 		{
@@ -2071,8 +2071,8 @@ public:
 		/* Bits IoHomeOn: */
 		/*
 		 * Enables the io-homecontrol(R) compatibility mode
-		 *           0 = Disabled
-		 *           1 = Enabled 
+		 * 0 = Disabled
+		 * 1 = Enabled
 		 */
 		struct IoHomeOn
 		{
@@ -2128,7 +2128,7 @@ public:
 	/*
 	 * REG PayloadLength:
 	 * If PacketFormat = 0 (fixed), payload length.
-	 *       If PacketFormat = 1 (variable), max length in Rx, not used in Tx. 
+	 * If PacketFormat = 1 (variable), max length in Rx, not used in Tx.
 	 */
 	struct PayloadLength
 	{
@@ -2164,7 +2164,7 @@ public:
 	
 	/*
 	 * REG NodeAdrs:
-	 * Node address used in address filtering. 
+	 * Node address used in address filtering.
 	 */
 	struct NodeAdrs
 	{
@@ -2200,7 +2200,7 @@ public:
 	
 	/*
 	 * REG BroadcastAdrs:
-	 * Broadcast address used in address filtering. 
+	 * Broadcast address used in address filtering.
 	 */
 	struct BroadcastAdrs
 	{
@@ -2243,8 +2243,8 @@ public:
 		/* Bits TxStartCondition: */
 		/*
 		 * Defines the condition to start packet transmission:
-		 *           0 = FifoLevel (i.e. the number of bytes in the FIFO exceeds FifoThreshold)
-		 *           1 = FifoEmpty goes low(i.e. at least one byte in the FIFO) 
+		 * 0 = FifoLevel (i.e. the number of bytes in the FIFO exceeds FifoThreshold)
+		 * 1 = FifoEmpty goes low(i.e. at least one byte in the FIFO)
 		 */
 		struct TxStartCondition
 		{
@@ -2261,7 +2261,7 @@ public:
 		/* Bits FifoThreshold: */
 		/*
 		 * Used to trigger FifoLevel interrupt, when: number of bytes in
-		 *           FIFO >= FifoThreshold + 1 
+		 * FIFO >= FifoThreshold + 1
 		 */
 		struct FifoThreshold
 		{
@@ -2299,8 +2299,8 @@ public:
 		/* Bits SequencerStart: */
 		/*
 		 * Controls the top level Sequencer
-		 *           When set to '1', executes the 'Start' transition.
-		 *           The sequencer can only be enabled when the chip is in Sleep or Standby mode. 
+		 * When set to '1', executes the 'Start' transition.
+		 * The sequencer can only be enabled when the chip is in Sleep or Standby mode.
 		 */
 		struct SequencerStart
 		{
@@ -2319,8 +2319,8 @@ public:
 		/* Bits IdleMode: */
 		/*
 		 * Selects chip mode during the state:
-		 *           0: Standby mode
-		 *           1: Sleep mode 
+		 * 0: Standby mode
+		 * 1: Sleep mode
 		 */
 		struct IdleMode
 		{
@@ -2331,9 +2331,9 @@ public:
 		/* Bits FromStart: */
 		/*
 		 * Controls the Sequencer transition when SequencerStart is set to 1 in Sleep or Standby mode:
-		 *           00: to LowPowerSelection 01: to Receive state
-		 *           10: to Transmit state
-		 *           11: to Transmit state on a FifoLevel interrupt 
+		 * 00: to LowPowerSelection 01: to Receive state
+		 * 10: to Transmit state
+		 * 11: to Transmit state on a FifoLevel interrupt
 		 */
 		struct FromStart
 		{
@@ -2344,10 +2344,10 @@ public:
 		/* Bits LowPowerSelection: */
 		/*
 		 * Selects the Sequencer LowPower state after a to LowPowerSelection transition:
-		 *           0: SequencerOff state with chip on Initial mode
-		 *           1: Idle state with chip on Standby or Sleep mode depending on
-		 *           IdleMode
-		 *           Note:   Initial mode is the chip LowPower mode at Sequencer Start. 
+		 * 0: SequencerOff state with chip on Initial mode
+		 * 1: Idle state with chip on Standby or Sleep mode depending on
+		 * IdleMode
+		 * Note:   Initial mode is the chip LowPower mode at Sequencer Start.
 		 */
 		struct LowPowerSelection
 		{
@@ -2358,8 +2358,8 @@ public:
 		/* Bits FromIdle: */
 		/*
 		 * Controls the Sequencer transition from the Idle state on a T1 interrupt:
-		 *           0: to Transmit state
-		 *           1: to Receive state 
+		 * 0: to Transmit state
+		 * 1: to Receive state
 		 */
 		struct FromIdle
 		{
@@ -2370,8 +2370,8 @@ public:
 		/* Bits FromTransmit: */
 		/*
 		 * Controls the Sequencer transition from the Transmit state:
-		 *           0: to LowPowerSelection on a PacketSent interrupt
-		 *           1: to Receive state on a PacketSent interrupt 
+		 * 0: to LowPowerSelection on a PacketSent interrupt
+		 * 1: to Receive state on a PacketSent interrupt
 		 */
 		struct FromTransmit
 		{
@@ -2409,16 +2409,16 @@ public:
 		/* Bits FromReceive: */
 		/*
 		 * Controls the Sequencer transition from the Receive state
-		 *           000 and 111: unused
-		 *           001: to PacketReceived state on a PayloadReady interrupt
-		 *           010: to LowPowerSelection on a PayloadReady interrupt
-		 *           011: to PacketReceived state on a CrcOk interrupt (1)
-		 *           100: to SequencerOff state on a Rssi interrupt
-		 *           101: to SequencerOff state on a SyncAddress interrupt
-		 *           110: to SequencerOff state on a PreambleDetect interrupt
-		 *           Irrespective of this setting, transition to LowPowerSelection on a T2 interrupt
-		 *           (1) If the CRC is wrong (corrupted packet, with CRC on but CrcAutoClearOn=0),
-		 *           the PayloadReady interrupt will drive the sequencer to RxTimeout state. 
+		 * 000 and 111: unused
+		 * 001: to PacketReceived state on a PayloadReady interrupt
+		 * 010: to LowPowerSelection on a PayloadReady interrupt
+		 * 011: to PacketReceived state on a CrcOk interrupt (1)
+		 * 100: to SequencerOff state on a Rssi interrupt
+		 * 101: to SequencerOff state on a SyncAddress interrupt
+		 * 110: to SequencerOff state on a PreambleDetect interrupt
+		 * Irrespective of this setting, transition to LowPowerSelection on a T2 interrupt
+		 * (1) If the CRC is wrong (corrupted packet, with CRC on but CrcAutoClearOn=0),
+		 * the PayloadReady interrupt will drive the sequencer to RxTimeout state.
 		 */
 		struct FromReceive
 		{
@@ -2429,12 +2429,12 @@ public:
 		/* Bits FromRxTimeout: */
 		/*
 		 * Controls the state-machine transition from the Receive state on a RxTimeout interrupt (and on PayloadReady if FromReceive = 011):
-		 *           00: to Receive State, via ReceiveRestart
-		 *           01: to Transmit state
-		 *           10: to LowPowerSelection
-		 *           11: to SequencerOff state
-		 *           Note:   RxTimeout interrupt is a TimeoutRxRssi, TimeoutRxPreamble or
-		 *           TimeoutSignalSync interrupt 
+		 * 00: to Receive State, via ReceiveRestart
+		 * 01: to Transmit state
+		 * 10: to LowPowerSelection
+		 * 11: to SequencerOff state
+		 * Note:   RxTimeout interrupt is a TimeoutRxRssi, TimeoutRxPreamble or
+		 * TimeoutSignalSync interrupt
 		 */
 		struct FromRxTimeout
 		{
@@ -2445,11 +2445,11 @@ public:
 		/* Bits FromPacketReceived: */
 		/*
 		 * Controls the state-machine transition from the PacketReceived state:
-		 *           000: to SequencerOff state
-		 *           001: to Transmit state on a FifoEmpty interrupt
-		 *           010: to LowPowerSelection
-		 *           011: to Receive via FS mode, if frequency was changed
-		 *           100: to Receive state (no frequency change) 
+		 * 000: to SequencerOff state
+		 * 001: to Transmit state on a FifoEmpty interrupt
+		 * 010: to LowPowerSelection
+		 * 011: to Receive via FS mode, if frequency was changed
+		 * 100: to Receive state (no frequency change)
 		 */
 		struct FromPacketReceived
 		{
@@ -2493,10 +2493,10 @@ public:
 		/* Bits Timer1Resolution: */
 		/*
 		 * Resolution of Timer 1
-		 *           00: Timer1 disabled
-		 *           01: 64 us
-		 *           10: 4.1 ms
-		 *           11: 262 ms 
+		 * 00: Timer1 disabled
+		 * 01: 64 us
+		 * 10: 4.1 ms
+		 * 11: 262 ms
 		 */
 		struct Timer1Resolution
 		{
@@ -2507,10 +2507,10 @@ public:
 		/* Bits Timer2Resolution: */
 		/*
 		 * Resolution of Timer 2
-		 *           00: Timer2 disabled
-		 *           01: 64 us
-		 *           10: 4.1 ms
-		 *           11: 262 ms 
+		 * 00: Timer2 disabled
+		 * 01: 64 us
+		 * 10: 4.1 ms
+		 * 11: 262 ms
 		 */
 		struct Timer2Resolution
 		{
@@ -2541,7 +2541,7 @@ public:
 	
 	/*
 	 * REG Timer1Coef:
-	 * Multiplying coefficient for Timer 1 
+	 * Multiplying coefficient for Timer 1
 	 */
 	struct Timer1Coef
 	{
@@ -2577,7 +2577,7 @@ public:
 	
 	/*
 	 * REG Timer2Coef:
-	 * Multiplying coefficient for Timer 2 
+	 * Multiplying coefficient for Timer 2
 	 */
 	struct Timer2Coef
 	{
@@ -2620,8 +2620,8 @@ public:
 		/* Bits AutoImageCalOn: */
 		/*
 		 * Controls the Image calibration mechanism
-		 *           0 = Calibration of the receiver depending on the temperature is disabled
-		 *           1 = Calibration of the receiver depending on the temperature enabled. 
+		 * 0 = Calibration of the receiver depending on the temperature is disabled
+		 * 1 = Calibration of the receiver depending on the temperature enabled.
 		 */
 		struct AutoImageCalOn
 		{
@@ -2639,7 +2639,7 @@ public:
 		/* Bits ImageCalRunning: */
 		/*
 		 * Set to 1 while the Image and RSSI calibration are running.
-		 *           Toggles back to 0 when the process is completed 
+		 * Toggles back to 0 when the process is completed
 		 */
 		struct ImageCalRunning
 		{
@@ -2656,9 +2656,9 @@ public:
 		/* Bits TempChange: */
 		/*
 		 * IRQ flag witnessing a temperature change exceeding TempThreshold since
-		 *           the last Image and RSSI calibration:
-		 *           0 = Temperature change lower than TempThreshold
-		 *           1 = Temperature change greater than TempThreshold 
+		 * the last Image and RSSI calibration:
+		 * 0 = Temperature change lower than TempThreshold
+		 * 1 = Temperature change greater than TempThreshold
 		 */
 		struct TempChange
 		{
@@ -2669,10 +2669,10 @@ public:
 		/* Bits TempThreshold: */
 		/*
 		 * Temperature change threshold to trigger a new I/Q calibration
-		 *           00 = 5C
-		 *           01 = 10C
-		 *           10 = 15C
-		 *           11 = 20C 
+		 * 00 = 5C
+		 * 01 = 10C
+		 * 10 = 15C
+		 * 11 = 20C
 		 */
 		struct TempThreshold
 		{
@@ -2683,8 +2683,8 @@ public:
 		/* Bits TempMonitorOff: */
 		/*
 		 * Controls the temperature monitor operation:
-		 *           0 = Temperature monitoring done in all modes except Sleep and Standby
-		 *           1 = Temperature monitoring stopped. 
+		 * 0 = Temperature monitoring done in all modes except Sleep and Standby
+		 * 1 = Temperature monitoring stopped.
 		 */
 		struct TempMonitorOff
 		{
@@ -2716,8 +2716,8 @@ public:
 	/*
 	 * REG Temp:
 	 * Measured temperature
-	 *       -1C per Lsb
-	 *       Needs calibration for absolute accuracy 
+	 * -1C per Lsb
+	 * Needs calibration for absolute accuracy
 	 */
 	struct Temp
 	{
@@ -2765,8 +2765,8 @@ public:
 		/* Bits LowBatOn: */
 		/*
 		 * Low Battery detector enable signal
-		 *           0 = LowBat detector disabled
-		 *           1 = LowBat detector enabled 
+		 * 0 = LowBat detector disabled
+		 * 1 = LowBat detector enabled
 		 */
 		struct LowBatOn
 		{
@@ -2777,14 +2777,14 @@ public:
 		/* Bits LowBatTrim: */
 		/*
 		 * Trimming of the LowBat threshold:
-		 *           000 = 1.695 V
-		 *           001 = 1.764 V
-		 *           010 = 1.835 V (d)
-		 *           011 = 1.905 V
-		 *           100 = 1.976 V
-		 *           101 = 2.045 V
-		 *           110 = 2.116 V
-		 *           111 = 2.185 V 
+		 * 000 = 1.695 V
+		 * 001 = 1.764 V
+		 * 010 = 1.835 V (d)
+		 * 011 = 1.905 V
+		 * 100 = 1.976 V
+		 * 101 = 2.045 V
+		 * 110 = 2.116 V
+		 * 111 = 2.185 V
 		 */
 		struct LowBatTrim
 		{
@@ -2822,12 +2822,12 @@ public:
 		/* Bits ModeReady: */
 		/*
 		 * Set when the operation mode requested in Mode, is ready
-		 *           - Sleep: Entering Sleep mode
-		 *           - Standby: XO is running
-		 *           - FS: PLL is locked
-		 *           - Rx: RSSI sampling starts
-		 *           - Tx: PA ramp-up completed
-		 *           Cleared when changing the operating mode. 
+		 * - Sleep: Entering Sleep mode
+		 * - Standby: XO is running
+		 * - FS: PLL is locked
+		 * - Rx: RSSI sampling starts
+		 * - Tx: PA ramp-up completed
+		 * Cleared when changing the operating mode.
 		 */
 		struct ModeReady
 		{
@@ -2858,7 +2858,7 @@ public:
 		/* Bits Rssi: */
 		/*
 		 * Set in Rx when the RssiValue exceeds RssiThreshold.
-		 *           Cleared when leaving Rx or setting this bit to 1. 
+		 * Cleared when leaving Rx or setting this bit to 1.
 		 */
 		struct Rssi
 		{
@@ -2868,7 +2868,7 @@ public:
 		/* Bits Timeout: */
 		/*
 		 * Set when a timeout occurs
-		 *           Cleared when leaving Rx or FIFO is emptied. 
+		 * Cleared when leaving Rx or FIFO is emptied.
 		 */
 		struct Timeout
 		{
@@ -2885,7 +2885,7 @@ public:
 		/* Bits SyncAddressMatch: */
 		/*
 		 * Set when Sync and Address (if enabled) are detected. Cleared when leaving Rx or FIFO is emptied.
-		 *           This bit is read only in Packet mode, rwc in Continuous mode 
+		 * This bit is read only in Packet mode, rwc in Continuous mode
 		 */
 		struct SyncAddressMatch
 		{
@@ -2936,7 +2936,7 @@ public:
 		/* Bits FifoLevel: */
 		/*
 		 * Set when the number of bytes in the FIFO strictly exceeds
-		 *           FifoThreshold, else cleared. 
+		 * FifoThreshold, else cleared.
 		 */
 		struct FifoLevel
 		{
@@ -2946,8 +2946,8 @@ public:
 		/* Bits FifoOverrun: */
 		/*
 		 * Set when FIFO overrun occurs. (except in Sleep mode)
-		 *           Flag(s) and FIFO are cleared when this bit is set.
-		 *           The FIFO then becomes immediately available for the next transmission / reception. 
+		 * Flag(s) and FIFO are cleared when this bit is set.
+		 * The FIFO then becomes immediately available for the next transmission / reception.
 		 */
 		struct FifoOverrun
 		{
@@ -2964,7 +2964,7 @@ public:
 		/* Bits PayloadReady: */
 		/*
 		 * Set in Rx when the payload is ready (i.e. last byte received and CRC, if
-		 *           enabled and CrcAutoClearOff is cleared, is Ok). Cleared when FIFO is empty. 
+		 * enabled and CrcAutoClearOff is cleared, is Ok). Cleared when FIFO is empty.
 		 */
 		struct PayloadReady
 		{
@@ -2981,7 +2981,7 @@ public:
 		/* Bits LowBat: */
 		/*
 		 * Set when the battery voltage drops below the Low Battery threshold.
-		 *           Cleared only when set to 1 by the user. 
+		 * Cleared only when set to 1 by the user.
 		 */
 		struct LowBat
 		{
@@ -3018,8 +3018,8 @@ public:
 		/* Bits Dio0Mapping: */
 		/*
 		 * Mapping of pins DIO0 to DIO5
-		 *           See Table 18 for mapping in LoRa mode
-		 *           See Table 29 for mapping in Continuous mode SeeTable 30 for mapping in Packet mode 
+		 * See Table 18 for mapping in LoRa mode
+		 * See Table 29 for mapping in Continuous mode SeeTable 30 for mapping in Packet mode
 		 */
 		struct Dio0Mapping
 		{
@@ -3100,9 +3100,9 @@ public:
 		/* Bits MapPreambleDetect: */
 		/*
 		 * Allows the mapping of either Rssi Or PreambleDetect to the DIO pins,
-		 *           as summarized on Table 29 and Table 30
-		 *           0 = Rssi interrupt
-		 *           1 = PreambleDetect interrupt 
+		 * as summarized on Table 29 and Table 30
+		 * 0 = Rssi interrupt
+		 * 1 = PreambleDetect interrupt
 		 */
 		struct MapPreambleDetect
 		{
@@ -3134,7 +3134,7 @@ public:
 	/*
 	 * REG Version:
 	 * Version code of the chip. Bits 7-4 give the full revision number; bits 3-0
-	 *       give the metal mask revision number. 
+	 * give the metal mask revision number.
 	 */
 	struct Version
 	{
@@ -3177,9 +3177,9 @@ public:
 		/* Bits FastHopOn: */
 		/*
 		 * Bypasses the main state machine for a quick frequency hop. Writing RegFrfLsb
-		 *           will trigger the frequency change.
-		 *           0 = Frf is validated when FSTx or FSRx is requested
-		 *           1 = Frf is validated triggered when RegFrfLsb is written 
+		 * will trigger the frequency change.
+		 * 0 = Frf is validated when FSTx or FSRx is requested
+		 * 1 = Frf is validated triggered when RegFrfLsb is written
 		 */
 		struct FastHopOn
 		{
@@ -3232,8 +3232,8 @@ public:
 		/* Bits TcxoInputOn: */
 		/*
 		 * Controls the crystal oscillator
-		 *           0 = Crystal Oscillator with external Crystal
-		 *           1 = External clipped sine TCXO AC-connected to XTA pin 
+		 * 0 = Crystal Oscillator with external Crystal
+		 * 1 = External clipped sine TCXO AC-connected to XTA pin
 		 */
 		struct TcxoInputOn
 		{
@@ -3287,8 +3287,8 @@ public:
 		/* Bits PaDac: */
 		/*
 		 * Enables the +20dBm option on PA_BOOST pin
-		 *           0x04 = Default value
-		 *           0x07 = +20dBm on PA_BOOST when OutputPower=1111 
+		 * 0x04 = Default value
+		 * 0x07 = +20dBm on PA_BOOST when OutputPower=1111
 		 */
 		struct PaDac_
 		{
@@ -3320,7 +3320,7 @@ public:
 	/*
 	 * REG FormerTemp:
 	 * Temperature saved during the latest IQ (RSSI and Image) calibration.
-	 *       Same format as TempValue in RegTemp. 
+	 * Same format as TempValue in RegTemp.
 	 */
 	struct FormerTemp
 	{
@@ -3369,7 +3369,7 @@ public:
 		/* Bits BitRateFrac: */
 		/*
 		 * Fractional part of the bit rate divider (Only valid for FSK) If BitRateFrac> 0 then:
-		 *           BitRate = 
+		 * BitRate =
 		 */
 		struct BitRateFrac
 		{
@@ -3413,7 +3413,7 @@ public:
 		/* Bits AgcReferenceLevel: */
 		/*
 		 * Sets the floor reference for all AGC thresholds: AGC Reference[dBm]=
-		 *           -174dBm+10*log(2*RxBw)+SNR+AgcReferenceLevel SNR = 8dB, fixed value 
+		 * -174dBm+10*log(2*RxBw)+SNR+AgcReferenceLevel SNR = 8dB, fixed value
 		 */
 		struct AgcReferenceLevel
 		{
